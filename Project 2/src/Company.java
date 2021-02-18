@@ -2,6 +2,11 @@
 public class Company {
 	private Employee[] emplist;
 	private int numEmployee;
+	
+	public Company() {
+		emplist = new Employee[4];
+		numEmployee = 0;
+	}
 	 
 	private int find(Employee employee) { }
 	private void grow() { }
