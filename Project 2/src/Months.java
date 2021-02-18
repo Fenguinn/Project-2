@@ -17,6 +17,10 @@ public class Months {
 	public static final int NOVEMBER= 11;
 	public static final int DECEMBER= 12;
 	public static final int NOTFOUND = -1;
+	public static final int STANDARDLENGTHMONTH 	 = 30;
+	public static final int EXTENDEDBYONEDAYMONTH    = 31;
+	public static final int NOTLEAP = 28;
+	public static final int LEAP    = 29;
 	
 	/**
 	 * A function that fetches the maximum possible days of any given month.
@@ -27,33 +31,33 @@ public class Months {
 	public static int MaxDaysPerMonth(int month, boolean isLeapYear) {
 		switch(month) {
 			case (JANUARY):
-				return 31;
+				return EXTENDEDBYONEDAYMONTH;
 			case (FEBRUARY):
 				if (isLeapYear) { 
-					return 29;
+					return LEAP;
 				}
 				else	
-					return 28;
+					return NOTLEAP;
 			case (MARCH):
-				return 31;
+				return EXTENDEDBYONEDAYMONTH;
 			case (APRIL):
-				return 30;
+				return STANDARDLENGTHMONTH;
 			case (MAY):
-				return 31;
+				return EXTENDEDBYONEDAYMONTH;
 			case (JUNE):
-				return 30;
+				return STANDARDLENGTHMONTH;
 			case (JULY):
-				return 31;
+				return EXTENDEDBYONEDAYMONTH;
 			case (AUGUST):
-				return 31;
+				return EXTENDEDBYONEDAYMONTH;
 			case (SEPTEMBER):
-				return 30;
+				return STANDARDLENGTHMONTH;
 			case (OCTOBER):
-				return 31;
+				return EXTENDEDBYONEDAYMONTH;
 			case (NOVEMBER):
-				return 30;
+				return STANDARDLENGTHMONTH;
 			case (DECEMBER):
-				return 31;
+				return EXTENDEDBYONEDAYMONTH;
 		}
 		return NOTFOUND;
 	}
