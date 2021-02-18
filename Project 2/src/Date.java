@@ -6,7 +6,7 @@ import java.util.Calendar;
  *Also provides utility to check for valid dates(accounting for leap years and other parameters)
  *@author Abdullah Salem, Gent Blaku
  */
-public class Date {
+public class Date implements Comparable<Date> {
 	private int year;
 	private int month;
 	private int day;
@@ -193,8 +193,25 @@ public class Date {
 		return true;
 	}
 
-	
-
+	public boolean isYoungerThan(Date other) {
+		if (this.year > other.year) {
+			return true;
+		}
+		else if (this.year == other.year) {
+			if (this.month > other.month ) {
+				return true;
+			}
+			else if (this.month == other.month) {
+				if (this.day > other.day) {
+					return true;
+				}
+			}
+		}
+		if (this.equals(other)) {
+			return false;
+		}
+		return false;
+	}
 	
 	
 	
@@ -227,7 +244,19 @@ public class Date {
 		return String.valueOf(this.month) + "/" + String.valueOf(this.day) + "/" + String.valueOf(this.year);
 	}
 	
-	
-	
+	/**
+	 * Overidding the compareTo method from the comparable interface
+	 * @return 0 if this date is equal to the other date, -1 if this date is before the other date, 1 if this date is after the other date
+	 */
+	@Override
+	public int compareTo(Date date) {
+		if (this.isOlderThan(date)) {
+			return -1;
+		}
+		if (this.isYoungerThan(date)) {
+			return 1;
+		}
+		return 0;
+	} //return 1, 0, or -1
 	
 }
