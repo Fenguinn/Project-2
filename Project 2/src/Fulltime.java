@@ -43,7 +43,8 @@ public class Fulltime extends Employee {
 	 */
 	@Override
 	public String toString() {
-		return super.toString();
+		//DONT FORGET TO IMPORT THE DECIMAL LIBRARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		return super.toString() + "::FULL TIME::Annual Salary $" + this.salary;
 	}
 	
 	

@@ -57,7 +57,8 @@ public class Parttime extends Employee {
 	 */
 	@Override
 	public String toString() {
-		return super.toString();
+		//DONT FORGET TO IMPORT THE DECIMAL LIBRARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		return super.toString() + "::PART TIME::Hourly Rate $" + this.hourlyRate + "::Hours worked this period: " + this.hoursWorked;
 	}
 	
 	

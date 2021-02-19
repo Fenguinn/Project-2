@@ -1,3 +1,8 @@
+import java.text.DecimalFormat;
+/*DecimalFormat df = new DecimalFormat("#.00");       (i dont know if we can include $ in here)
+ String formattedPay = df.format(the salary / hourly wage goes in here);
+ 
+ */
 
 public class Employee {
 	private Profile employeeProfile;
@@ -54,6 +59,7 @@ public class Employee {
 	 */
 	@Override
 	public String toString() {
-		return this.employeeProfile.toString();
+		//DONT FORGET TO IMPORT THE DECIMAL LIBRARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		return this.employeeProfile.toString()+ "::Payment $" + this.payPerPeriod;  
 	}
 }

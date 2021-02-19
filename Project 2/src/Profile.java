@@ -5,6 +5,14 @@ public class Profile {
 	private Date dateHired;
 	
 	
+	public Profile(String name, String department, Date dateHired) {
+		this.name = name;
+		this.department = department;
+		this.dateHired = dateHired;
+		
+	}
+	
+	
 	public Date getDate() {
 		return this.dateHired;
 	}
@@ -19,7 +27,7 @@ public class Profile {
 	
 	@Override
 	public String toString() { 
-		return this.name + " " + this.department + " " + this.dateHired;
+		return this.name + "::" + this.department + "::" + this.dateHired;
 		
 	}
 	@Override
