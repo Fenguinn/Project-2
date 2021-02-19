@@ -5,6 +5,18 @@ public class Profile {
 	private Date dateHired;
 	
 	
+	public Date getDate() {
+		return this.dateHired;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getDepartment() {
+		return this.department;
+	}
+	
 	@Override
 	public String toString() { 
 		return this.name + " " + this.department + " " + this.dateHired;

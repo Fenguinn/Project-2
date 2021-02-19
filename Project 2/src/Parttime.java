@@ -14,12 +14,14 @@ public class Parttime extends Employee {
 		
 	}
 	
-	private boolean setHours(int newHours) {
+	public boolean setHours(int newHours) {
 		this.hoursWorked = newHours;
 	/*REMOVE THIS?*/	return true;
 	}
 	
-	
+	public int getHours() {
+		return this.hoursWorked;
+	}
 	
 	@Override
 	public void calculatePayment() {

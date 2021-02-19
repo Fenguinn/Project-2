@@ -5,6 +5,14 @@ public class Employee {
 	//private int hours;
 	//private double wage;
 	
+	public Date getDate() {
+		return this.employeeProfile.getDate();
+	}
+	
+	public String getName() {
+		return this.employeeProfile.getName();
+	}
+	
 	public Employee(Profile newHire) {
 		this.employeeProfile = newHire;
 		
