@@ -54,7 +54,7 @@ public class Company {
 	
 	
 	/**
-	 * A helper method that sorts the employees in the array by their Department(ascending).
+	 * A helper method that sorts the employees in the array by their Department.
 	 */
 	private void sortByDepartment() {
 		int EmployeeIndex;
