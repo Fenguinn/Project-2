@@ -1,5 +1,5 @@
 import java.text.DecimalFormat;
-/*DecimalFormat df = new DecimalFormat("#.00");       (i dont know if we can include $ in here)
+/*
  String formattedPay = df.format(the salary / hourly wage goes in here);
  
  */
@@ -33,6 +33,12 @@ public class Employee {
 		
 	}
 	
+	public String formatPayments(double payment) {
+		DecimalFormat df = new DecimalFormat("$###.##");
+		String formattedPay = df.format(payment);
+		return formattedPay;
+	}
+	
 	
 	/**
 	 * Overriding the equals method inherited from the object class.
@@ -61,5 +67,6 @@ public class Employee {
 	public String toString() {
 		//DONT FORGET TO IMPORT THE DECIMAL LIBRARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		return this.employeeProfile.toString()+ "::Payment $" + this.payPerPeriod;  
+		
 	}
 }

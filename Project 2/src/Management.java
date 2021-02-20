@@ -72,7 +72,7 @@ public class Management extends Fulltime {
 			role = "Director ";
 			break;
 		}													//This may be redundant. please check PLEASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		return super.toString() + role + "Compensation $" + this.bonus/(double)PAYPERIODSPERYEAR;
+		return super.toString() + role + "Compensation " + super.formatPayments(bonus/(double)PAYPERIODSPERYEAR);
 	}
 	
 	
