@@ -6,8 +6,8 @@ import java.text.DecimalFormat;
  * @author Abdullah Salem, Gent Blaku
  */
 public class Employee {
-	private Profile employeeProfile;
-	private double payPerPeriod;
+	private Profile employeeProfile; //profile of each employee, using the profile class.
+	private double payPerPeriod;     //payment earned by employees in the current pay period.
 	
 	
 	/**
@@ -97,7 +97,7 @@ public class Employee {
 	
 	/**
 	 * Overriding the toString method of inherited from the object class.
-	 * @returns a string representing this object
+	 * @return a string representing this object
 	 */
 	@Override
 	public String toString() {

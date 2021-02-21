@@ -4,7 +4,7 @@
  * @author Abdullah Salem, Gent Blaku
  */
 public class Fulltime extends Employee {
-	private double salary;
+	private double salary; //salary of the fulltime employee.
 	private static final int PAYPERIODSPERYEAR = 26;
 	
 	/**
@@ -49,7 +49,7 @@ public class Fulltime extends Employee {
 	
 	/**
 	 * Overriding the toString method of inherited from the object class.
-	 * @returns a string representing this object
+	 * @return a string representing this object
 	 */
 	@Override
 	public String toString() {

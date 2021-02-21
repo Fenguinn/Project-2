@@ -4,8 +4,8 @@
  * @author Abdullah Salem, Gent Blaku
  */
 public class Parttime extends Employee {
-	private double hourlyRate;
-	private int hoursWorked;
+	private double hourlyRate; //hourly pay of the parttime employee.
+	private int hoursWorked;   //hours worked this pay period by the parttime employee.
 	private static final int STANDARDHOURSPERPERIOD = 80;
 	
 	private static final double OVERTIMERATE = 1.5;
@@ -70,7 +70,7 @@ public class Parttime extends Employee {
 	
 	/**
 	 * Overriding the toString method of inherited from the object class.
-	 * @returns a string representing this object
+	 * @return a string representing this object
 	 */
 	@Override
 	public String toString() {

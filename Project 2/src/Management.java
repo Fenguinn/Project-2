@@ -4,8 +4,8 @@
  * @author Abdullah Salem, Gent Blaku
  */
 public class Management extends Fulltime {
-	private double bonus;
-	private int role;
+	private double bonus; //bonus of the management employee.
+	private int role;     //role title of the management employee.
 	private static final int MANAGER = 1;
 	private static final int DEPARTMENT_HEAD = 2;
 	private static final int DIRECTOR = 3;
@@ -16,9 +16,9 @@ public class Management extends Fulltime {
 	
 	/**
 	 * Creates an object of the Management Class
-	 * @param profile of an employee
-	 * @param double representation of the employee's salary 
-	 * @param int representation of the employee's management role
+	 * @param profile profile of an employee
+	 * @param salary double representation of the employee's salary 
+	 * @param managementRole int representation of the employee's management role
 	 */
 	public Management(Profile profile,double salary, int managementRole) {
 		super(profile,salary);
@@ -41,7 +41,7 @@ public class Management extends Fulltime {
 	
 	/**
 	 * A method that sets the bonus for this employee.
-	 * @param double representation of this employee's bonus.
+	 * @param roleBonus double representation of this employee's bonus.
 	 */
 	private void setBonus(double roleBonus) {
 		this.bonus = roleBonus;
@@ -76,7 +76,7 @@ public class Management extends Fulltime {
 	
 	/**
 	 * Overriding the toString method of inherited from the object class.
-	 * @returns a string representing this object
+	 * @return a string representing this object
 	 */
 	@Override
 	public String toString() {
