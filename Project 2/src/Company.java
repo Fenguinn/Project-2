@@ -113,6 +113,17 @@ public class Company {
 	}
 	
 	/**
+	 * A method to tell if the company's array has no employees
+	 * @return true if there are no employees, true if some exist
+	 */
+	public boolean isEmpty() {
+		if (this.numEmployee < 1 )
+			return true;
+		else
+			return false;
+	}
+	
+	/**
 	 * A method that adds an object of the employee class into the company's array
 	 * @param employee is the object meant to be added
 	 * @return true if the employee is added, false if the employee already exists

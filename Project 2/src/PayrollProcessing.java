@@ -146,17 +146,33 @@ public class PayrollProcessing {
 	}
 	
 	private void PA(String tokensArray[], Company company) {
-		
+		if (this.listCheck(company)) {
+			return;
+		}
+		company.print();
 	}
 	
 	private void PH(String tokensArray[], Company company) {
-		
+		if (this.listCheck(company)) {
+			return;
+		}
+		company.printByDate();
 	}
 	
 	private void PD(String tokensArray[], Company company) {
-		
+		if (this.listCheck(company)) {
+			return;
+		}
+		company.printByDepartment();
 	}
 	
+	private boolean listCheck(Company company) {
+		if (company.isEmpty()) {
+			System.out.println("Employee database is empty.");
+			return true;
+		}
+		return false;
+	}
 	
 	private void addCheck(Employee newEmployee, Company company, String tokensArray[]) {
 		if (!tokensArray[THIRDINDEX].equals("ECE") && !tokensArray[THIRDINDEX].equals("CS") && !tokensArray[THIRDINDEX].equals("IT")) {
