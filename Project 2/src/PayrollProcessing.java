@@ -27,13 +27,14 @@ public class PayrollProcessing {
 		StringTokenizer tokens;
 		String tokensArray[];
 		
+		
 		while(!Quit){ //Running until the user quits
 			line = input.nextLine();
 			tokens = new StringTokenizer(line, " ");
 			tokensArray = this.tokenizedInput(tokens);
 			
 			
-			
+			try {
 			
 			switch(tokensArray[FIRSTINDEX]) 
 			{
@@ -73,6 +74,10 @@ public class PayrollProcessing {
 					break;
 			}
 		}
+			catch (Exception e) {
+				//System.out.println("MismatchException");
+			}
+		}
 		
 		input.close();
 		System.out.println("Payroll Processing completed.");
@@ -91,7 +96,7 @@ public class PayrollProcessing {
 	
 	private void AM(String tokensArray[], Company company) {
 		if (Integer.parseInt(tokensArray[SIXTHINDEX]) != MANAGER && Integer.parseInt(tokensArray[SIXTHINDEX]) != DEPARTMENT_HEAD && Integer.parseInt(tokensArray[SIXTHINDEX]) != DIRECTOR) {
-			System.out.println("Invalid mangement code.");
+			System.out.println("Invalid management code.");
 			return;
 		}
 		
@@ -114,20 +119,33 @@ public class PayrollProcessing {
 	}
 	
 	private void R(String tokensArray[], Company company) {
+		if (listCheck(company) == true) {
+			return;
+		}
+		
 		if (company.remove(new Employee(new Profile(tokensArray[SECONDINDEX], tokensArray[THIRDINDEX], new Date(tokensArray[FOURTHINDEX]))))) {
 			System.out.println("Employee removed.");
 		}
+	
 		else {
 			System.out.println("Employee does not exist.");
+			return;
 		}
 	}
 	
 	private void C(String tokensArray[], Company company) {
+		if (listCheck(company) == true) {
+			return;
+		}
 		company.processPayments();
 		System.out.println("Calculation of employee payments is done.");
 	}
 	
 	private void S(String tokensArray[], Company company) {
+		if (listCheck(company) == true) {
+			return;
+		}
+		
 		if (Integer.parseInt(tokensArray[FIFTHINDEX]) > 100) {
 			System.out.println("Invalid Hours: over 100.");
 			return;
@@ -137,8 +155,9 @@ public class PayrollProcessing {
 			System.out.println("Working hours cannot be negative.");
 			return;
 		}
-		
-		if (!company.setHours(new Employee(new Profile(tokensArray[SECONDINDEX], tokensArray[THIRDINDEX], new Date(tokensArray[FOURTHINDEX]))))) {
+		Parttime temp = new Parttime(new Profile(tokensArray[SECONDINDEX], tokensArray[THIRDINDEX], new Date(tokensArray[FOURTHINDEX])), 0);
+		temp.setHours(Integer.parseInt(tokensArray[FIFTHINDEX]));
+		if (!company.setHours(temp)) {
 			System.out.println("Employee does not exist.");
 			return;
 		}
@@ -149,6 +168,7 @@ public class PayrollProcessing {
 		if (this.listCheck(company)) {
 			return;
 		}
+		System.out.println("--Printing earning statements for all employees--");
 		company.print();
 	}
 	
@@ -156,6 +176,7 @@ public class PayrollProcessing {
 		if (this.listCheck(company)) {
 			return;
 		}
+		System.out.println("--Printing earning statements by date hired--");
 		company.printByDate();
 	}
 	
@@ -163,6 +184,7 @@ public class PayrollProcessing {
 		if (this.listCheck(company)) {
 			return;
 		}
+		System.out.println("--Printing earning statements by department--");
 		company.printByDepartment();
 	}
 	
@@ -176,7 +198,7 @@ public class PayrollProcessing {
 	
 	private void addCheck(Employee newEmployee, Company company, String tokensArray[]) {
 		if (!tokensArray[THIRDINDEX].equals("ECE") && !tokensArray[THIRDINDEX].equals("CS") && !tokensArray[THIRDINDEX].equals("IT")) {
-			System.out.println("'" + tokensArray[SECONDINDEX] + "' is not a valid department code.");
+			System.out.println("'" + tokensArray[THIRDINDEX] + "' is not a valid department code.");
 			return;
 		}
 		

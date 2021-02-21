@@ -163,7 +163,7 @@ public class Company {
 	
 	/**
 	 * 
-	 * @param employee is the partime employee with their new hours
+	 * @param employee is the part-time employee with their new hours
 	 * @return true if hours are changed, false if not
 	 */
 	public boolean setHours(Employee employee) {
@@ -177,6 +177,7 @@ public class Company {
 			pointerToPartTimer.setHours(partTimer.getHours());
 			return true;
 		}
+		
 		return false;
 	} //set working hours for a part time
 	

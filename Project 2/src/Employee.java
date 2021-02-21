@@ -32,6 +32,11 @@ public class Employee {
 	}
 	
 	
+	public double getPayPerPeriod() {
+		return this.payPerPeriod;
+	}
+	
+	
 	public void calculatePayment() {
 		
 	}

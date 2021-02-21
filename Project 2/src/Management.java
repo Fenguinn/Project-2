@@ -25,7 +25,7 @@ public class Management extends Fulltime {
 				setBonus(DIRECTOR_BONUS);
 				break;
 		}
-		super.setSalary(salary+bonus);
+		super.setSalary(salary);
 		
 	}
 	
@@ -37,6 +37,7 @@ public class Management extends Fulltime {
 	@Override
 	public void calculatePayment() {
 		super.calculatePayment();
+		super.setPayPerPeriod(super.getPayPerPeriod() + bonus/(double)PAYPERIODSPERYEAR);
 		
 	}
 	
@@ -66,13 +67,13 @@ public class Management extends Fulltime {
 			role = "Manager ";
 			break;
 		case DEPARTMENT_HEAD:
-			role = "Department Head ";
+			role = "DepartmentHead ";
 			break;
 		case DIRECTOR: 
 			role = "Director ";
 			break;
 		}													//This may be redundant. please check PLEASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		return super.toString() + role + "Compensation " + super.formatPayments(bonus/(double)PAYPERIODSPERYEAR);
+		return super.toString() +"::" + role + "Compensation " + super.formatPayments(bonus/(double)PAYPERIODSPERYEAR);
 	}
 	
 	
