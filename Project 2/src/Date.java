@@ -44,10 +44,10 @@ public class Date implements Comparable<Date> {
 	 * @param bookYear to be checked
 	 * @return true if it is a leapyear, false if not
 	 */
-	private boolean checkForLeapYear(int bookYear) {
-		if (bookYear % QUARTER == 0 ) {
-			if(bookYear % CENTURY == 0) {
-				if (bookYear % QUADRICENTENNIAL == 0) {
+	private boolean checkForLeapYear(int hireYear) {
+		if (hireYear % QUARTER == 0 ) {
+			if(hireYear % CENTURY == 0) {
+				if (hireYear % QUADRICENTENNIAL == 0) {
 					return true;
 				}
 				else {

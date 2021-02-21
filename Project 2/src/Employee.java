@@ -11,6 +11,16 @@ public class Employee {
 	
 	
 	/**
+	 * Creates an object of the Employee Class
+	 * @param newHire profile of an employee
+	 */
+	public Employee(Profile newHire) {
+		this.employeeProfile = newHire;
+		
+	}
+	
+	
+	/**
 	 * A method that fetches the hire date for an employee.
 	 * @return an object of the date class representing when this employee was hired.
 	 */
@@ -32,14 +42,7 @@ public class Employee {
 		return this.employeeProfile.getDepartment();
 	}
 	
-	/**
-	 * Creates an object of the Employee Class
-	 * @param newHire profile of an employee
-	 */
-	public Employee(Profile newHire) {
-		this.employeeProfile = newHire;
-		
-	}
+	
 	
 	/**
 	 * A method that sets the payment amount for an employee in the current pay period.
