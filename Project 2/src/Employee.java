@@ -18,6 +18,9 @@ public class Employee {
 		return this.employeeProfile.getName();
 	}
 	
+	public String getDepartment() {
+		return this.employeeProfile.getDepartment();
+	}
 	public Employee(Profile newHire) {
 		this.employeeProfile = newHire;
 		
@@ -34,7 +37,7 @@ public class Employee {
 	}
 	
 	public String formatPayments(double payment) {
-		DecimalFormat df = new DecimalFormat("$###.##");
+		DecimalFormat df = new DecimalFormat("$#,##0.00");
 		String formattedPay = df.format(payment);
 		return formattedPay;
 	}
@@ -53,8 +56,9 @@ public class Employee {
 		}
 		else if (obj instanceof Employee){
 			Employee other = (Employee)obj;
-			if (this.employeeProfile.equals(other.employeeProfile))
+			if (this.employeeProfile.equals(other.employeeProfile)) {
 				return true;
+			}
 		}
 		return false;
 	}
@@ -66,7 +70,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		//DONT FORGET TO IMPORT THE DECIMAL LIBRARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		return this.employeeProfile.toString()+ "::Payment $" + this.payPerPeriod;  
+		return this.employeeProfile.toString()+ "::Payment " + formatPayments(this.payPerPeriod);  
 		
 	}
 }

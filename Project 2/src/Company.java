@@ -61,7 +61,7 @@ public class Company {
 		for (int i = 0; i < numEmployee -1; i++){
 			EmployeeIndex = i;
 			for (int j = i+1; j < numEmployee; j++) {
-				if (employList[j].getName().compareTo(employList[EmployeeIndex].getName()) < 0) {
+				if (employList[j].getDepartment().compareTo(employList[EmployeeIndex].getDepartment()) < 0) {
 					EmployeeIndex = j;
 					}
 				}
@@ -173,7 +173,7 @@ public class Company {
 	 * A function that processes payments for all employees in the current Pay-Period.
 	 */
 	public void processPayments() { 
-		for (int i=0; i<employList.length; i++) {
+		for (int i=0; i<numEmployee; i++) {
 			employList[i].calculatePayment();
 		}
 	} //process payments for all employees

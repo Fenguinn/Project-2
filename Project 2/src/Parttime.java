@@ -3,20 +3,19 @@ public class Parttime extends Employee {
 	private double hourlyRate;
 	private int hoursWorked;
 	private static final int STANDARDHOURSPERPERIOD = 80;
-	private static final int MAXHOURSPERPERIOD = 100;
+	//private static final int MAXHOURSPERPERIOD = 100;
 	private static final double OVERTIMERATE = 1.5;
-	
+	private static final int NOHOURSWORKED = 0;
 	
 	
 	public Parttime(Profile profile,double rate) {
 		super(profile);
 		this.hourlyRate = rate;
-		
+		this.hoursWorked = NOHOURSWORKED;
 	}
 	
-	public boolean setHours(int newHours) {
+	public void setHours(int newHours) {
 		this.hoursWorked = newHours;
-	/*REMOVE THIS?*/	return true;
 	}
 	
 	public int getHours() {
@@ -58,7 +57,7 @@ public class Parttime extends Employee {
 	@Override
 	public String toString() {
 		//DONT FORGET TO IMPORT THE DECIMAL LIBRARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		return super.toString() + "::PART TIME::Hourly Rate $" + this.hourlyRate + "::Hours worked this period: " + this.hoursWorked;
+		return super.toString() + "::PART TIME::Hourly Rate " + super.formatPayments(this.hourlyRate) + "::Hours worked this period: " + this.hoursWorked;
 	}
 	
 	
