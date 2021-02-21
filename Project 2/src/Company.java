@@ -1,4 +1,7 @@
-
+/**
+ * A class that simulates the functionality of a company's register of employees.
+ * @author Abdullah Salem, Gent Blaku
+ */
 public class Company {
 	private Employee[] employList;
 	private int numEmployee;
@@ -79,7 +82,7 @@ public class Company {
 		for (int i = 0; i < numEmployee -1; i++){
 			oldestEmployeeIndex = i;
 			for (int j = i+1; j < numEmployee; j++) {
-				if (employList[j].getDate().isOlderThan(employList[oldestEmployeeIndex].getDate())) {
+				if (employList[j].getDate().compareTo(employList[oldestEmployeeIndex].getDate()) < 0) {
 					oldestEmployeeIndex = j;
 				}
 				else if (employList[j].getDate().equals(employList[oldestEmployeeIndex].getDate())) {

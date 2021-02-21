@@ -1,6 +1,11 @@
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+/**
+ * A class that facilitates the input and output of the program -- The User Interface.
+ * This simulates a company's payroll.
+ * @author Abdullah Salem, Gent Blaku
+ */
 public class PayrollProcessing {
 	private static final int FIRSTINDEX = 0;
 	private static final int SECONDINDEX = 1;
@@ -84,7 +89,11 @@ public class PayrollProcessing {
 		return;
 	}
 	
-	
+	/**
+	 * This method completes the roll of the AP command: Adding part-time employee.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class that is being added to.
+	 */
 	private void AP(String tokensArray[], Company company) {
 		if (Double.parseDouble(tokensArray[FIFTHINDEX]) < 0) {
 			System.out.println("Salary cannot be negative.");
@@ -94,6 +103,11 @@ public class PayrollProcessing {
 		addCheck(newEmployee, company, tokensArray);
 	}
 	
+	/**
+	 * This method completes the roll of the AM command: Add Management employee.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class that is being added to.
+	 */
 	private void AM(String tokensArray[], Company company) {
 		if (Integer.parseInt(tokensArray[SIXTHINDEX]) != MANAGER && Integer.parseInt(tokensArray[SIXTHINDEX]) != DEPARTMENT_HEAD && Integer.parseInt(tokensArray[SIXTHINDEX]) != DIRECTOR) {
 			System.out.println("Invalid management code.");
@@ -109,6 +123,11 @@ public class PayrollProcessing {
 		addCheck(newEmployee, company, tokensArray);
 	}
 	
+	/**
+	 * This method completes the roll of the AF command: Add full time employee.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class that is being added to.
+	 */
 	private void AF(String tokensArray[], Company company) {
 		if (Double.parseDouble(tokensArray[FIFTHINDEX]) < 0) {
 			System.out.println("Pay rate cannot be negative.");
@@ -118,6 +137,11 @@ public class PayrollProcessing {
 		addCheck(newEmployee, company, tokensArray);
 	}
 	
+	/**
+	 * This method completes the roll of the R command: remove employee.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class that is being subtracted from.
+	 */
 	private void R(String tokensArray[], Company company) {
 		if (listCheck(company) == true) {
 			return;
@@ -133,6 +157,11 @@ public class PayrollProcessing {
 		}
 	}
 	
+	/**
+	 * This method completes the roll of the C command: calculating the payroll.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class whose payroll is being calculated.
+	 */
 	private void C(String tokensArray[], Company company) {
 		if (listCheck(company) == true) {
 			return;
@@ -141,6 +170,11 @@ public class PayrollProcessing {
 		System.out.println("Calculation of employee payments is done.");
 	}
 	
+	/**
+	 * This method completes the roll of the R command: setting employee hours.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class that is being updated.
+	 */
 	private void S(String tokensArray[], Company company) {
 		if (listCheck(company) == true) {
 			return;
@@ -164,6 +198,11 @@ public class PayrollProcessing {
 		System.out.println("Working hours set.");
 	}
 	
+	/**
+	 * This method completes the roll of the PA command: Print All Employee Earnings.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class.
+	 */
 	private void PA(String tokensArray[], Company company) {
 		if (this.listCheck(company)) {
 			return;
@@ -172,6 +211,11 @@ public class PayrollProcessing {
 		company.print();
 	}
 	
+	/**
+	 * This method completes the roll of the PA command: Print All Employee Earnings by Date Hired.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class.
+	 */
 	private void PH(String tokensArray[], Company company) {
 		if (this.listCheck(company)) {
 			return;
@@ -180,6 +224,11 @@ public class PayrollProcessing {
 		company.printByDate();
 	}
 	
+	/**
+	 * This method completes the roll of the PA command: Print All Employee Earnings by Date Hired.
+	 * @param tokensArray contains all the user input.
+	 * @param company is an Object of the Company class.
+	 */
 	private void PD(String tokensArray[], Company company) {
 		if (this.listCheck(company)) {
 			return;
@@ -188,6 +237,11 @@ public class PayrollProcessing {
 		company.printByDepartment();
 	}
 	
+	/**
+	 * A helper method that checks the company's array contains employees.
+	 * @param company that is being checked.
+	 * @return true if the company is empty, false otherwise.
+	 */
 	private boolean listCheck(Company company) {
 		if (company.isEmpty()) {
 			System.out.println("Employee database is empty.");
@@ -195,7 +249,13 @@ public class PayrollProcessing {
 		}
 		return false;
 	}
-	
+
+	/**
+	 * A helper method that checks the user input when adding a new employee to the company.
+	 * @param newEmployee is an object of the employee class that is being added.
+	 * @param company is an object of the company class that an employee is joining.
+	 * @param tokensArray is an array of the String object containing all the user inputs.
+	 */
 	private void addCheck(Employee newEmployee, Company company, String tokensArray[]) {
 		if (!tokensArray[THIRDINDEX].equals("ECE") && !tokensArray[THIRDINDEX].equals("CS") && !tokensArray[THIRDINDEX].equals("IT")) {
 			System.out.println("'" + tokensArray[THIRDINDEX] + "' is not a valid department code.");
