@@ -96,7 +96,7 @@ public class PayrollProcessing {
 	 */
 	private void AP(String tokensArray[], Company company) {
 		if (Double.parseDouble(tokensArray[FIFTHINDEX]) < 0) {
-			System.out.println("Salary cannot be negative.");
+			System.out.println("Pay rate cannot be negative.");
 			return;
 		}
 		Parttime newEmployee = new Parttime(new Profile(tokensArray[SECONDINDEX], tokensArray[THIRDINDEX], new Date(tokensArray[FOURTHINDEX])), Double.parseDouble(tokensArray[FIFTHINDEX]));
@@ -130,7 +130,7 @@ public class PayrollProcessing {
 	 */
 	private void AF(String tokensArray[], Company company) {
 		if (Double.parseDouble(tokensArray[FIFTHINDEX]) < 0) {
-			System.out.println("Pay rate cannot be negative.");
+			System.out.println("Salary cannot be negative.");
 			return;
 		}
 		Fulltime newEmployee = new Fulltime(new Profile(tokensArray[SECONDINDEX], tokensArray[THIRDINDEX], new Date(tokensArray[FOURTHINDEX])), Double.parseDouble(tokensArray[FIFTHINDEX]));
