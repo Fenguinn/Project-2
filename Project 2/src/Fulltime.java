@@ -1,24 +1,34 @@
-
+/**
+ * A Class that manages and stores the information of fulltime employees. 
+ * This is a subclass of the Employee class.
+ * @author Abdullah Salem, Gent Blaku
+ */
 public class Fulltime extends Employee {
 	private double salary;
 	private static final int PAYPERIODSPERYEAR = 26;
 	
-	
+	/**
+	 * Creates an object of the Fulltime Class
+	 * @param newHire profile of an employee
+	 * @param newSalary double representation of the employee's salary 
+	 */
 	public Fulltime(Profile newHire, double newSalary) {
 		super(newHire);
 		this.salary = newSalary;
 	}
 
-	
+	/**
+	 * A method that sets the salary for this employee.
+	 * @param newSalary double representation of this employee's salary.
+	 */
 	public void setSalary(double newSalary) {
 		this.salary = newSalary;
 	}
-	
-	/*public double getSalary() {
-		return this.salary;
-	}
-	*/
-	
+
+	/**
+	 *Overriding the calculatePayment method inherited from the Employee class.
+	 * A method that calculates payments for employees in the current pay period.
+	 */
 	@Override
 	public void calculatePayment() {
 		double payment = salary / PAYPERIODSPERYEAR;
@@ -43,7 +53,7 @@ public class Fulltime extends Employee {
 	 */
 	@Override
 	public String toString() {
-		//DONT FORGET TO IMPORT THE DECIMAL LIBRARY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 		return super.toString() + "::FULL TIME::Annual Salary " + super.formatPayments(this.salary);
 	}
 	

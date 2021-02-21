@@ -193,6 +193,11 @@ public class Date implements Comparable<Date> {
 		return true;
 	}
 
+	/**
+	 * A method that checks if the date of the object is chronologically after the date of the other object.
+	 * @param other is the object of the date class to be measure against
+	 * @return true if this object is younger, false if it is older
+	 */
 	public boolean isYoungerThan(Date other) {
 		if (this.year > other.year) {
 			return true;

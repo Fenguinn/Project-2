@@ -1,4 +1,8 @@
-
+/**
+ * A Class that manages and stores the information of management employees. 
+ * This is a subclass of the Fulltime class.
+ * @author Abdullah Salem, Gent Blaku
+ */
 public class Management extends Fulltime {
 	private double bonus;
 	private int role;
@@ -10,6 +14,12 @@ public class Management extends Fulltime {
 	private static final double DIRECTOR_BONUS = 12000.00;
 	private static final int PAYPERIODSPERYEAR = 26;
 	
+	/**
+	 * Creates an object of the Management Class
+	 * @param profile of an employee
+	 * @param double representation of the employee's salary 
+	 * @param int representation of the employee's management role
+	 */
 	public Management(Profile profile,double salary, int managementRole) {
 		super(profile,salary);
 		this.role = managementRole;
@@ -29,11 +39,20 @@ public class Management extends Fulltime {
 		
 	}
 	
-	
+	/**
+	 * A method that sets the bonus for this employee.
+	 * @param double representation of this employee's bonus.
+	 */
 	private void setBonus(double roleBonus) {
 		this.bonus = roleBonus;
 	}
 	
+	
+	
+	/**
+	 *Overriding the calculatePayment method inherited from the Fulltime class.
+	 * A method that calculates payments for employees in the current pay period.
+	 */
 	@Override
 	public void calculatePayment() {
 		super.calculatePayment();
@@ -72,7 +91,7 @@ public class Management extends Fulltime {
 		case DIRECTOR: 
 			role = "Director ";
 			break;
-		}													//This may be redundant. please check PLEASE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		}													
 		return super.toString() +"::" + role + "Compensation " + super.formatPayments(bonus/(double)PAYPERIODSPERYEAR);
 	}
 	
