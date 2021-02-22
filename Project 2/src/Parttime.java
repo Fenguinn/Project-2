@@ -42,7 +42,7 @@ public class Parttime extends Employee {
 	 */
 	@Override
 	public void calculatePayment() {
-		if (hoursWorked <80) {
+		if (hoursWorked < STANDARDHOURSPERPERIOD) {
 			super.setPayPerPeriod(hourlyRate*hoursWorked);
 		}
 		else {

@@ -13,7 +13,7 @@ public class Company {
 	 * The company has a beginning capacity of four and has zero employees.
 	 */
 	public Company() {
-		employList = new Employee[4];
+		employList = new Employee[FOUR];
 		numEmployee = 0;
 	}
 	

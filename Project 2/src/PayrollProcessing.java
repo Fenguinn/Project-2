@@ -17,6 +17,11 @@ public class PayrollProcessing {
 	private static final int MANAGER = 1;
 	private static final int DEPARTMENT_HEAD = 2;
 	private static final int DIRECTOR = 3;
+	private static final int MAX_PARTTIME_HOURS = 100;
+	private static final String DEPARTMENT_CS = "CS";
+	private static final String DEPARTMENT_ECE = "ECE";
+	private static final String DEPARTMENT_IT = "IT";
+	
 	
 	/**
 	 * A method that handles the user input and gives appropriate output.
@@ -180,7 +185,7 @@ public class PayrollProcessing {
 			return;
 		}
 		
-		if (Integer.parseInt(tokensArray[FIFTHINDEX]) > 100) {
+		if (Integer.parseInt(tokensArray[FIFTHINDEX]) > MAX_PARTTIME_HOURS) {
 			System.out.println("Invalid Hours: over 100.");
 			return;
 		}
@@ -257,7 +262,7 @@ public class PayrollProcessing {
 	 * @param tokensArray is an array of the String object containing all the user inputs.
 	 */
 	private void addCheck(Employee newEmployee, Company company, String tokensArray[]) {
-		if (!tokensArray[THIRDINDEX].equals("ECE") && !tokensArray[THIRDINDEX].equals("CS") && !tokensArray[THIRDINDEX].equals("IT")) {
+		if (!tokensArray[THIRDINDEX].equals(DEPARTMENT_ECE) && !tokensArray[THIRDINDEX].equals(DEPARTMENT_CS) && !tokensArray[THIRDINDEX].equals(DEPARTMENT_IT)) {
 			System.out.println("'" + tokensArray[THIRDINDEX] + "' is not a valid department code.");
 			return;
 		}
